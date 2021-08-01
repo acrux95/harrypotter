@@ -1,0 +1,65 @@
+@import './vars.scss';
+
+  .cardBody{
+    width: 40vw;
+    border-radius: 16px;
+    display: inline-flex;
+    padding: 20px;
+    font-family: $font;
+    .imageSection {
+      width: 40%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 16px 0 0 16px;
+      img {
+        width: 170px;
+        height: 170px;
+        border-radius: 50%;
+        shape-outside: circle();
+        object-fit: cover;
+      }
+    }
+    .dataSection {
+      width: 60%;
+      border-radius: 0 16px 16px 0;
+      padding: 15px 8px 15px 25px;
+      .statusSection{
+        display: inline-flex;
+        align-items: center;
+        width: 100%;
+        .status{
+          width: 90%;
+        }
+        .favoriteButton{
+          outline: none;
+          background: none;
+          border: none;
+          cursor: pointer;
+        }
+      }
+      .characterData{
+        p {
+          font-size: .8rem;
+        }
+      }
+    }
+  }
+.Gryffindor{
+  background: linear-gradient(135deg, #FF0000 0%, #FED482 100%);
+}
+.Slytherin{
+  background: linear-gradient(135deg, #1C792B 0%, #82E95E 100%)
+}
+.Hufflepuff{
+  background: linear-gradient(135deg, #FFC700 0%, #FFF388 100%);
+}
+.Ravenclaw{
+  background: linear-gradient(135deg, #0597B7 0%, #66D1FF 100%);
+}
+.death {
+  background-color: $gray2;
+}
+.live {
+  background-color: $white;
+}

@@ -1,0 +1,62 @@
+@import './vars.scss';
+
+.hero{
+  background-image: url('../static/background.png');
+  background-size: 100%;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-color: $black;
+  width: 100%;
+  height: auto;
+  font-family: $font;
+  .titleZone{
+    padding-top: 150px;
+    .title{
+      display: flex;
+      justify-content: center;
+      .logo{
+        width: 200px;
+      }
+    }
+    .subtitle{
+      display: flex;
+      justify-content: center;
+      color: $white;
+      font-size: 36px;
+      font-weight: 700;
+    }
+  }
+  .buttonBar{
+    display: flex;
+    justify-content:space-around;
+    margin-bottom: 100px;
+    .buttonStudents{
+      margin-left: 70px;
+    }
+    .buttonStaff{
+      margin-right: 70px;
+    }
+  }
+  .cardSection {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.selectButton{
+  width: 26vw;
+  height: 67px;
+  border: 2px solid $purpleActive;
+  border-radius: 4px;
+  outline:n none;
+  background-color: $gray;
+  color: $white;
+  font-size: 17px;
+  font-weight: 600;
+  &:hover{
+    background-color: $purpleHover;
+  }
+  &:active {
+    background-color: $purpleActive;
+  }
+}
