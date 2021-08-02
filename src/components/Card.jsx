@@ -5,7 +5,7 @@ import React from 'react';
 
 import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
 
-import '../assets/styles/Card.scss'
+import '../assets/styles/card.scss'
 
 const Card = (props) => {
   const {image, imageAlt, status, cname, birthday, gender, eyes, hair, house} = props;

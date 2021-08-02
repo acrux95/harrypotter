@@ -40,6 +40,7 @@
   .cardSection {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    justify-items: center;
   }
 }
 
@@ -48,15 +49,16 @@
   height: 67px;
   border: 2px solid $purpleActive;
   border-radius: 4px;
-  outline:n none;
+  outline: none;
   background-color: $gray;
   color: $white;
   font-size: 17px;
   font-weight: 600;
+  cursor: pointer;
   &:hover{
     background-color: $purpleHover;
   }
-  &:active {
+  &:focus {
     background-color: $purpleActive;
   }
 }
