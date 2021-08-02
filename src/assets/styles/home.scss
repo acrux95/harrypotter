@@ -42,6 +42,9 @@
     grid-template-columns: 1fr 1fr;
     justify-items: center;
   }
+  .footer{
+    visibility: hidden;
+  }
 }
 
 .selectButton{
@@ -60,5 +63,12 @@
   }
   &:focus {
     background-color: $purpleActive;
+  }
+}
+
+@media only screen and (max-width: 600px){
+  .hero{
+    background-image: none;
+
   }
 }

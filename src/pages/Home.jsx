@@ -27,7 +27,7 @@ const home = () => {
 
   return (
     <section className="hero">
-      <MenuBar />
+      <MenuBar className="header"/>
       <div className="titleZone">
         <div className="title">
           <img className="logo" src={logo} alt="HP logo" />

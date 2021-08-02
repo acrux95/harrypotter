@@ -21,4 +21,17 @@
   border: 1px solid #888;
   width: 40%; /* Could be more or less, depending on screen size */
   border-radius: 10px;
+  .columnLeft{
+    .title{
+
+    }
+    .inputName, .inputEyes{
+      margin: 15px 0;
+    }
+    .gender {
+      .radioGroup {
+        display: inline-flexbox;
+      }
+    }
+  }
 }

@@ -6,8 +6,9 @@
     display: inline-flex;
     padding: 20px;
     font-family: $font;
+
     .imageSection {
-      width: 40%;
+      width: 60%;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -62,4 +63,99 @@
 }
 .live {
   background-color: $white;
+}
+
+@media only screen and (max-width: 899px){
+  .cardBody{
+    width: 40vw;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    .imageSection {
+      width: 40vw;
+      height: 30vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 16px 16px 0 0;
+    }
+    .dataSection {
+      width: 40vw;
+      border-radius: 0 0 16px 16px;
+      padding: 10px 0 15px 0;
+      .statusSection{
+        display: inline-flex;
+        align-items: center;
+        width: 90%;
+        padding-left: 25px;
+        .status{
+          width: 90%;
+        }
+      }
+      .characterName{
+        width: 90%;
+        margin-right: 0;
+        padding-left: 25px;
+      }
+      .characterData{
+        
+        p {
+          padding-left: 25px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px){
+  .cardBody{
+    width: 40vw;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    font-family: $font;
+    .imageSection {
+      width: 40vw;
+      height: 40vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 16px 16px 0 0;
+    }
+    .dataSection {
+      width: 40vw;
+      height: 200px;
+      border-radius: 0 0 16px 16px;
+      padding: 10px 0 15px 0;
+      .statusSection{
+        display: inline-flex;
+        align-items: center;
+        width: 90%;
+        padding-left: 25px;
+        position: relative;
+        top: 120px;
+        .status{
+          width: 90%;
+        }
+        .favoriteButton{
+          outline: none;
+          background: none;
+          border: none;
+          cursor: pointer;
+        }
+      }
+      .characterName{
+        width: 90%;
+        margin-right: 0;
+        padding-left: 25px;
+        position: relative;
+        top: -40px
+      }
+      .characterData{
+        visibility: hidden;
+        height: 0;
+      }
+    }
+  }
 }
