@@ -3,12 +3,12 @@ import React from 'react';
 
 // import { setFavorite, deleteFavorite } from '../actions';
 
-import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
+import {Bookmark,BookmarkBorder} from '@material-ui/icons';
 
 import '../assets/styles/card.scss'
 
 const Card = (props) => {
-  const {image, imageAlt, status, cname, birthday, gender, eyes, hair, house} = props;
+  const {image, imageAlt, status, cname, birthday, gender, eyes, hair, house, isList} = props;
   return (
     <section className="cardBody">
       <div className={`${house} imageSection`}>
@@ -19,9 +19,15 @@ const Card = (props) => {
           <div className="status">
           {status ? "Vivo" : "Finado"} / Estudiante
           </div>
-          <button type='submit' className="favoriteButton">
-            <BookmarkBorderIcon color="disabled"/>
-          </button>
+          {!isList ? (
+            <button type='submit' className="favoriteButton">
+              <BookmarkBorder color="disabled"/>
+            </button> 
+          ) : (
+            <button type='submit' className="favoriteButton">
+              <Bookmark color="disabled"/>
+            </button> )
+          }
         </section>
         <h2 className="characterName">
         {status ? "" : "+"} {cname}

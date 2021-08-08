@@ -20,14 +20,15 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "PORT=3001 react-scripts start",
+    "execute": "npm run api start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "format": "prettier --write \"**/*.+(js|jsx|json|css|md)\"",
-    "api": "json-server --watch initialState.json"
+    "api": "Port=3000 json-server --watch initialState.json"
   },
   "eslintConfig": {
     "extends": [

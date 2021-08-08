@@ -27,7 +27,7 @@ const home = () => {
 
   return (
     <section className="hero">
-      <MenuBar className="header"/>
+      <MenuBar positionClass="header"/>
       <div className="titleZone">
         <div className="title">
           <img className="logo" src={logo} alt="HP logo" />
@@ -72,8 +72,9 @@ const home = () => {
           )
         }
       </section>
+      <MenuBar positionClass="footer"/>
     </section>
   )
 }
 
-export default home
+export default home;

@@ -1,31 +1,94 @@
 @import './vars.scss';
 
-.menuBar{
+.header{
+  width: 300px;
+  height: 270px;
   display:flex;
-  justify-content: flex-end;
-  margin: 0 8rem;
-  button {
-    width: 140px;
+  flex-direction: column;
+  justify-self: end;
+  margin-left: 65vw;
+  .menuButtons {
+    width: 280px;
+    height: 36px;
+    button {
+      width: 140px;
+      height: 36px;
+      background-color: $purpleActive;
+      color: $white;
+      outline: none;
+      box-shadow: 0 4px 4px 4px rgba(0, 0, 0, 0.25);
+      border: 1px solid #403B6D;
+      cursor: pointer;
+      vertical-align: middle;
+      span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      &:hover {
+        background-color: $purpleHover;
+      }
+    }
+    .buttonLeft{
+      border-radius: 0 0 0 10px;
+    }
+    .buttonRigth{
+      border-radius: 0 0 10px 0;
+    }
+  }
+  .favoritesBar{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 280px;
     height: 36px;
     background-color: $purpleActive;
     color: $white;
-    outline: none;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border: none;
-    cursor: pointer;
-    &:hover {
-      background-color: $purpleHover;
+    img {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      shape-outside: circle();
+      object-fit: cover;
     }
   }
-  .buttonLeft{
-    border-radius: 0 0 0 10px;
-  }
-  .buttonRigth{
-    border-radius: 0 0 10px 0;
-
-  }
+}
+.footer {
+  visibility: hidden;
 }
 
-.modalBar{
-  
+
+@media only screen and (max-width: 899px){
+  .header{
+  margin-left: 50vw;
+  }
+}
+@media only screen and (max-width: 600px){
+  .header{
+    display: none;
+  }
+  .footer {
+    visibility: visible;
+    display:flex;
+    justify-content: center;
+    button {
+      width: 140px;
+      height: 36px;
+      background-color: $purpleActive;
+      color: $white;
+      outline: none;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      border: none;
+      cursor: pointer;
+      &:hover {
+        background-color: $purpleHover;
+      }
+    }
+    .buttonLeft{
+      border-radius: 0 0 0 10px;
+    }
+    .buttonRigth{
+      border-radius: 0 0 10px 0;
+    }
+  }
 }
