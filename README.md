@@ -11,14 +11,14 @@ In the project directory, you can run:
 Runs the Json Server Service.\
 Open [http://localhost:3000](http://localhost:3000).
 
-The server will load inmediatly.
+The server will load inmediatly, run this first.
 
 ### `npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3001](http://localhost:3001) to view it in the browser.
 
-The page will reload if you make edits.
+The page will reload if you make edits. No run before api script.
 
 
 ### `yarn build`
