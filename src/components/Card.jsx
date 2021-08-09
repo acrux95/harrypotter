@@ -1,14 +1,25 @@
 import React from 'react';
-// import { connect } from 'react-redux';
+import { connect } from 'react-redux';
 
-// import { setFavorite, deleteFavorite } from '../actions';
+import { setFavorite } from '../actions';
 
 import {Bookmark,BookmarkBorder} from '@material-ui/icons';
 
 import '../assets/styles/card.scss'
 
 const Card = (props) => {
-  const {image, imageAlt, status, cname, birthday, gender, eyes, hair, house, isList} = props;
+  const { id, image, imageAlt, status, cname, birthday, gender, eyes, hair, house, isList } = props;
+  
+  const handleSetFavorite = () => {
+    // myList.Length < 5 
+    // ? props.setFavorite({
+    //   id, image, imageAlt, cname, isList,
+    // })
+    // : null
+    props.setFavorite({
+      id, image, imageAlt, cname, isList,
+    })
+  };
   return (
     <section className="cardBody">
       <div className={`${house} imageSection`}>
@@ -19,8 +30,12 @@ const Card = (props) => {
           <div className="status">
           {status ? "Vivo" : "Finado"} / Estudiante
           </div>
-          {!isList ? (
-            <button type='submit' className="favoriteButton">
+          {isList ? (
+            <button 
+              type='submit' 
+              className="favoriteButton"
+              onClick={handleSetFavorite}
+            >
               <BookmarkBorder color="disabled"/>
             </button> 
           ) : (
@@ -43,4 +58,7 @@ const Card = (props) => {
   )
 }
 
-export default Card;
+const mapDispatchToProps = {
+  setFavorite,
+};
+export default connect(null, mapDispatchToProps)(Card);

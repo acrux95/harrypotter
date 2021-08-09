@@ -1,5 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
+import axios from 'axios';
 
+import { deleteFavorite } from '../actions';
 import Modal from '../components/Modal'
 
 import { TextField, Radio, RadioGroup, FormControlLabel, FormControl, FormLabel} from '@material-ui/core';
@@ -7,14 +10,16 @@ import {PersonAdd, Bookmark, DeleteOutline} from '@material-ui/icons/';
 
 import '../assets/styles/menuBar.scss'
 
-const MenuBar = ({positionClass}) => {
+const MenuBar = ({ positionClass, myList } ) => {
   const [state, setState] = useState({
+    postId: 19,
     name: '',
     birthday: '',
     eyesColor: '',
     hairColor: '',
     gender: '',
     position: '',
+    image: '',
     modal: false,
   })
   const [showMenu, setShowMenu] = useState(false)
@@ -34,7 +39,35 @@ const MenuBar = ({positionClass}) => {
       [event.target.name]: event.target.value
     });
   };
-  
+  const handleDeletefavorite = (itemId) => {
+    deleteFavorite(itemId);
+  };
+
+  useEffect(async() => {
+    setState({...state, postId:(state.postId + 1)})
+    // let typeOfChar;
+    // state.position === 'student'
+    //   ? typeOfChar = 'students'
+    //   : typeOfChar = 'staff'
+    axios.post(`http://localhost:3000/newCharacters/`, 
+    {
+      name: state.name,
+      dayOfBirth: state.birthday,
+      eyeColour: state.eyesColor,
+      hairColor: state.hairColor,
+      gender: state.gender,
+      position: state.position,
+      image: state.image,
+      id: state.postId,
+    }).then(resp => {
+      console.log(resp.data);
+      handleClose();
+    }).catch(error => {
+      console.log(error);
+      handleClose();
+    });   
+  }, []);
+
   return (
     <section className={positionClass}>
       { positionClass === 'header' ? (
@@ -59,22 +92,31 @@ const MenuBar = ({positionClass}) => {
           </section>
           <>
             { showMenu ? (
-              <section className="favoritesBar">
-                <img src="" alt="" />
-                <p>Luna Lovegood</p>
-                <DeleteOutline />
-              </section> ) : null }
+              myList.map(item => (
+                <section className="favoritesBar">
+                  <img src={item.image} alt={item.cname} />
+                  <p>{item.cname}</p>
+                  <button type="submit" onClick={handleDeletefavorite(item.id)}>
+                    <DeleteOutline />
+                  </button>
+                </section> 
+              ))
+            ) : null }
           </>
         </>
       ):(
         <>
           { showMenu ? (
-            <section className="favoritesBar">
-              <img src="" alt="" />
-              <p>Luna Lovegood</p>
-              <DeleteOutline />
-            </section> ) : null
-            }
+            myList?.map(item => (
+              <section className="favoritesBar">
+                <img src={item.image} alt={item.name} />
+                <p>{item.name}</p>
+                <button type="submit" onClick={handleDeletefavorite(item.id)}>
+                  <DeleteOutline />
+                </button>
+              </section> 
+            ))
+          ) : null }
           <section className="menuButtons">
             <button
               className="buttonLeft"
@@ -136,8 +178,15 @@ const MenuBar = ({positionClass}) => {
                 </RadioGroup>
               </FormControl>
             </div>
+            <input type="file" id="" name={state.image} onChange={handleChange}/>
+            <button 
+              className="addCharacter"
+              type="submit"
+            >
+              Guardar
+            </button>
           </section>
-          <section className="columnRigth">
+            <section className="columnRigth">
             <div className="closeModalControl">
               <button 
               type="submit"
@@ -187,4 +236,7 @@ const MenuBar = ({positionClass}) => {
   )
 }
 
-export default MenuBar;
+const mapDispatchToProps = {
+  deleteFavorite,
+};
+export default connect(null, mapDispatchToProps)(MenuBar);

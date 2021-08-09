@@ -1,3 +1,20 @@
+
+// const initialState = () => {
+//   const API = 'http://localhost:3000/';
+//   const [characters, setCharacters] = useState([]);
+
+//   useEffect(() => {
+//     async function fetchData() {
+//       const response = await fetch(API);
+//       const data = await response.json();
+//       setCharacters(data);
+//       console.log(characters.students);
+//     } fetchData();
+//   },[]);
+// }
+
+// export default initialState;
+
 export default {
     "myList": [],
     "students": [
@@ -277,7 +294,7 @@ export default {
         "actor": "Dame Maggie Smith",
         "alive": true,
         "image": "http://hp-api.herokuapp.com/images/mcgonagall.jpg",
-        "id": 0
+        "id": 11
       },
       {
         "name": "Severus Snape",
@@ -300,7 +317,7 @@ export default {
         "actor": "Alan Rickman",
         "alive": false,
         "image": "http://hp-api.herokuapp.com/images/snape.jpg",
-        "id": 1
+        "id": 12
       },
       {
         "name": "Rubeus Hagrid",
@@ -323,7 +340,7 @@ export default {
         "actor": "Robbie Coltrane",
         "alive": true,
         "image": "http://hp-api.herokuapp.com/images/hagrid.png",
-        "id": 2
+        "id": 13
       },
       {
         "name": "Remus Lupin",
@@ -346,7 +363,7 @@ export default {
         "actor": "David Thewlis",
         "alive": false,
         "image": "http://hp-api.herokuapp.com/images/lupin.jpg",
-        "id": 3
+        "id": 14
       },
       {
         "name": "Horace Slughorn",
@@ -369,7 +386,7 @@ export default {
         "actor": "Jim Broadbent",
         "alive": true,
         "image": "http://hp-api.herokuapp.com/images/slughorn.JPG",
-        "id": 4
+        "id": 15
       },
       {
         "name": "Dolores Umbridge",
@@ -392,7 +409,7 @@ export default {
         "actor": "Imelda Staunton",
         "alive": true,
         "image": "http://hp-api.herokuapp.com/images/umbridge.jpg",
-        "id": 5
+        "id": 16
       },
       {
         "name": "Mrs Norris",
@@ -415,7 +432,7 @@ export default {
         "actor": "Maxime, Alanis and Tommy the cats",
         "alive": true,
         "image": "http://hp-api.herokuapp.com/images/norris.JPG",
-        "id": 6
+        "id": 17
       },
       {
         "name": "Argus Filch",
@@ -438,7 +455,7 @@ export default {
         "actor": "David Bradley",
         "alive": true,
         "image": "http://hp-api.herokuapp.com/images/filch.jpg",
-        "id": 7
+        "id": 18
       }
     ]
   }
