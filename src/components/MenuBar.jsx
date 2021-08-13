@@ -13,7 +13,7 @@ import '../assets/styles/menuBar.scss'
 const MenuBar = ({ positionClass, myList } ) => {
   const [state, setState] = useState({
     postId: 19,
-    name: '',
+    cName: '',
     birthday: '',
     eyesColor: '',
     hairColor: '',
@@ -44,14 +44,15 @@ const MenuBar = ({ positionClass, myList } ) => {
   };
 
   useEffect(async() => {
-    setState({...state, postId:(state.postId + 1)})
+    let count = state.postId + 1;
+    setState({...state, postId: count })
     // let typeOfChar;
     // state.position === 'student'
     //   ? typeOfChar = 'students'
     //   : typeOfChar = 'staff'
     axios.post(`http://localhost:3000/newCharacters/`, 
     {
-      name: state.name,
+      name: state.cName,
       dayOfBirth: state.birthday,
       eyeColour: state.eyesColor,
       hairColor: state.hairColor,
@@ -146,8 +147,8 @@ const MenuBar = ({ positionClass, myList } ) => {
                 variant="filled"
                 type="text"
                 label="NOMBRE"
-                value={state.name}
-                name="name"
+                value={state.cName}
+                name="cName"
                 autoComplete="off"
                 onChange={handleChange}
                 onInput={(e) => {
